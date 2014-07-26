@@ -2,6 +2,10 @@
   "name": "osm-then-and-now",
   "description": "OSM Then And Now - Compare OSM from June 2007 with now",
   "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mvexel/thenandnow.git"
+  },
   "devDependencies": {
     "gulp": "^3.8.6",
     "gulp-autoprefixer": "0.0.7",
