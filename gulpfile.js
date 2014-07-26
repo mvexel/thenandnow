@@ -132,5 +132,5 @@ gulp.task('watch', ['connect', 'serve'], function () {
 // deploy on gh-pages
 gulp.task('deploy', function () {
     gulp.src("./dist/**/*")
-        .pipe(deploy(options));
+        .pipe(deploy());
 });
