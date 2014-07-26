@@ -1,0 +1,54 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+.group:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+body,
+html {
+	font-family: Arial, sans-serif;
+	height: 100%;
+}
+.map {
+	width: 100%;
+	height: 100%;
+	position:absolute;
+}
+
+.map-application {
+	height: 100%;
+	padding-top: 50px;
+}
+
+header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 50px;
+	padding: 15px;
+	z-index: 9;
+	border-bottom: 1px solid #eee;
+	width:100%;
+}
+header .appName {
+	float: left;
+}
+header .appSub {
+	float: right;
+	font-size: smaller;
+}
+
+.range {
+  position:absolute;
+  width:100%;
+}
+
+.leaflet-top .leaflet-control-zoom {
+  top:20px;
+}

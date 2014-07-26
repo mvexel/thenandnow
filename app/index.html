@@ -1,0 +1,47 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html> <!--<![endif]-->
+<head>
+	<meta charset="UTF-8">
+	<title>OSM Then And Now</title>
+	<meta name="description" content="">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="lib/styles/leaflet.css">
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+   	<!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body>
+		<header class="group">
+			<div class="appName">
+				OSM Then And Now
+			</div>
+			<div class="appSub">
+				A thing by Martijn van Exel / fork me on Github
+			</div>
+		</header>
+	<div class="map-application">
+		<div id="map" class="map"></div>
+		<input id='range' class='range' type='range' min='0' max='1.0' step='any' />
+	</div>
+	<!-- build:js scripts/vendor.js -->
+	<script src="lib/scripts/leaflet.js"></script>
+    <!-- bower:js -->
+    <script src="bower_components/leaflet-hash/leaflet-hash.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+	<!-- build:js scripts/main.js -->
+	<script src="scripts/main.js"></script>
+	<!-- endbuild -->
+</body>
+</html>
