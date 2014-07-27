@@ -13,13 +13,14 @@
 	/* add hash */
 	var hash = new L.Hash(map);
 
-	/* add default stamen tile layer */
+	/* add default OSM tile layer */
 	new L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 		minZoom: 0,
 		maxZoom: 18,
 		attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
 	}).addTo(map);
 
+	/* add the 2007 overlay */
 	var overlay = L.tileLayer('http://98.202.195.171/osm/{z}/{x}/{y}.png').addTo(map);
 
 	var range = document.getElementById('range');
@@ -35,5 +36,7 @@
 	map.on('move', clip);
 
 	clip();
-	map.setView([52.2644,5.2899], 10);
+	if (!window.location.hash) {
+		map.setView([52.2644,5.2899], 10);
+	}
 }(window, document, L));
