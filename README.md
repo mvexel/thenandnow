@@ -21,3 +21,7 @@ Historic tiles are served from an old home server. Be gentle.
 * `npm install`
 * `bower install`
 * `gulp watch`
+
+## License
+
+MIT
