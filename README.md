@@ -24,4 +24,4 @@ Historic tiles are served from an old home server. Be gentle.
 
 ## License
 
-MIT
+MIT - see LICENSE
