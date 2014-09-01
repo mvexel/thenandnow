@@ -18,6 +18,11 @@ body {
 	height: 100%;
 }
 
+em {
+	font-weight: bold;
+	color:red;
+}
+
 .map {
 	width: 100%;
 	height: 100%;
