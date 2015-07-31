@@ -21,12 +21,12 @@
 	}).addTo(map);
 
 	/* add the 2007 overlay */
-	var overlay = L.tileLayer('http://24.11.75.220/osm/{z}/{x}/{y}.png').addTo(map);
+	var overlay = L.tileLayer('http://98.202.150.206/osm/{z}/{x}/{y}.png').addTo(map);
 
 	var range = document.getElementById('range');
 
 	function clip() {
-		var nw = map.containerPointToLayerPoint([0, 0]), 
+		var nw = map.containerPointToLayerPoint([0, 0]),
 		se = map.containerPointToLayerPoint(map.getSize()),
 		clipX = nw.x + (se.x - nw.x) * range.value;
 		overlay.getContainer().style.clip = 'rect(' + [nw.y, clipX, se.y, nw.x].join('px,') + 'px)';
