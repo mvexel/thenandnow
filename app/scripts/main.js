@@ -21,7 +21,7 @@
 	}).addTo(map);
 
 	/* add the 2007 overlay */
-	var overlay = L.tileLayer('http://98.202.150.206/osm/{z}/{x}/{y}.png').addTo(map);
+	var overlay = L.tileLayer('http://67.166.75.136/osm/{z}/{x}/{y}.png').addTo(map);
 
 	var range = document.getElementById('range');
 
