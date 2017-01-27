@@ -5,7 +5,6 @@ var gulp = require('gulp');
 var open = require('open');
 var wiredep = require('wiredep').stream;
 var deploy = require("gulp-gh-pages");
-var del = require('del');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -32,10 +31,14 @@ gulp.task('html', ['styles', 'scripts'], function () {
     var cssFilter = $.filter('**/*.css');
 
     return gulp.src('app/*.html')
+        .pipe($.useref.assets())
         .pipe(jsFilter)
         .pipe($.uglify())
+        .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe($.csso())
+        .pipe(cssFilter.restore())
+        .pipe($.useref.restore())
         .pipe($.useref())
         .pipe(gulp.dest('dist'))
         .pipe($.size());
@@ -44,8 +47,8 @@ gulp.task('html', ['styles', 'scripts'], function () {
 // Images
 gulp.task('images', function () {
     return gulp.src([
-    		'app/images/**/*',
-    		'app/lib/images/*'])
+            'app/images/**/*',
+            'app/lib/images/*'])
         .pipe($.cache($.imagemin({
             optimizationLevel: 3,
             progressive: true,
@@ -57,7 +60,7 @@ gulp.task('images', function () {
 
 // Clean
 gulp.task('clean', function () {
-    return del(['dist/**/*']);
+    return gulp.src(['dist/styles', 'dist/scripts', 'dist/images'], { read: false }).pipe($.clean());
 });
 
 // Build
@@ -108,7 +111,7 @@ gulp.task('watch', ['connect', 'serve'], function () {
         'app/scripts/**/*.js',
         'app/images/**/*'
     ], function (event) {
-    	console.log('reload');
+        console.log('reload');
         return gulp.src(event.path)
             .pipe($.connect.reload());
     });
@@ -126,7 +129,8 @@ gulp.task('watch', ['connect', 'serve'], function () {
     gulp.watch('bower.json', ['wiredep']);
 });
 
-gulp.task('deploy', function() {
-  return gulp.src('./dist/**/*')
-    .pipe(deploy());
+// deploy on gh-pages
+gulp.task('deploy', function () {
+    gulp.src("./dist/**/*")
+        .pipe(deploy());
 });
