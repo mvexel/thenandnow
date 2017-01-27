@@ -8,11 +8,11 @@
     "url": "git@github.com:mvexel/thenandnow.git"
   },
   "devDependencies": {
-    "gulp": "^3.8.6",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "0.0.7",
     "gulp-bower": "^0.0.13",
     "gulp-cache": "^0.4.5",
-    "gulp-rimraf": "^0.2.1",
     "gulp-connect": "^5.0.0",
     "gulp-csso": "^2.0.0",
     "gulp-filter": "^5.0.0",
@@ -20,6 +20,7 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-jshint": "^2.0.4",
     "gulp-load-plugins": "^1.4.0",
+    "gulp-rimraf": "^0.2.1",
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^2.0.1",
     "gulp-useref": "^3.1.2",

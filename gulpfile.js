@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var open = require('open');
 var wiredep = require('wiredep').stream;
 var deploy = require("gulp-gh-pages");
+var del = require('del');
 
 // Load plugins
 var $ = require('gulp-load-plugins')();
@@ -31,14 +32,10 @@ gulp.task('html', ['styles', 'scripts'], function () {
     var cssFilter = $.filter('**/*.css');
 
     return gulp.src('app/*.html')
-        .pipe($.useref.assets())
         .pipe(jsFilter)
         .pipe($.uglify())
-        .pipe(jsFilter.restore())
         .pipe(cssFilter)
         .pipe($.csso())
-        .pipe(cssFilter.restore())
-        .pipe($.useref.restore())
         .pipe($.useref())
         .pipe(gulp.dest('dist'))
         .pipe($.size());
@@ -60,7 +57,7 @@ gulp.task('images', function () {
 
 // Clean
 gulp.task('clean', function () {
-    return gulp.src(['dist/styles', 'dist/scripts', 'dist/images'], { read: false }).pipe($.clean());
+    return del(['dist/**/*']);
 });
 
 // Build
