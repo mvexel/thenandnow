@@ -28,6 +28,7 @@
     "wiredep": "^1.4.4"
   },
   "dependencies": {
-    "leaflet": "~0.7.2"
+    "leaflet": "~0.7.2",
+    "leaflet-geocoder-mapzen": "^1.8.1"
   }
 }

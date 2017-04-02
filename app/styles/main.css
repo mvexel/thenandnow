@@ -64,7 +64,8 @@ header .appSub {
   width:100%;
 }
 
-.leaflet-top .leaflet-control-zoom {
+.leaflet-top .leaflet-control-zoom,
+.leaflet-top .leaflet-pelias-control {
   top:60px;
 }
 

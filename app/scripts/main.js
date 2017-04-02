@@ -20,6 +20,9 @@
 		attribution: 'Map data © <a href="http://www.openstreetmap.org">OpenStreetMap contributors</a>'
 	}).addTo(map);
 
+	/* add geocoder */
+	var geocoder = new L.Control.Geocoder('mapzen-N6t5k3x').addTo(map);
+
 	/* add the 2007 overlay */
 	var overlay = L.tileLayer('http://tile.rtijn.org/tile/{z}/{x}/{y}.png').addTo(map);
 
