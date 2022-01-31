@@ -1,0 +1,116 @@
+.leaflet-top.leaflet-center {
+    left: 10px;
+    right: 10px;
+}
+
+.leaflet-geonames-search {
+    background-color: #FFF;
+    width: 34px;
+    max-width: 300px;
+    box-sizing: border-box;
+}
+
+.leaflet-geonames-search.active {
+    width: 100%;
+}
+
+.leaflet-geonames-search a {
+    border-radius: 4px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: transparent !important;
+    border: none !important;
+}
+
+.leaflet-geonames-search form {
+    width: 100%;
+    height: 30px;
+}
+
+.leaflet-geonames-search input {
+    padding: 6px 6px 2px 30px;
+    margin: 0;
+    border: none;
+    display: none;
+    width: 100%;
+    font-size: 12pt;
+    box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+
+.leaflet-geonames-search ul {
+    display: none;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    clear: both;
+}
+
+.leaflet-geonames-search ul li {
+    padding: 4px 8px;
+    border-top: 1px solid #DDD;
+    font-size: 1.1em;
+}
+
+.leaflet-geonames-search ul.hasResults li:hover {
+    background: #F2F2F2;
+    cursor: pointer;
+}
+
+.leaflet-geonames-search ul li em {
+    color: #999;
+}
+
+.leaflet-geonames-search input:focus {
+    outline: 0;
+}
+
+.leaflet-geonames-search.active input,
+.leaflet-geonames-search.active label {
+    display: inline-block;
+}
+
+.leaflet-geonames-search ul.hasResults,
+.leaflet-geonames-search ul.noResults {
+    display: block;
+}
+
+.leaflet-geonames-search ul.noResults {
+    color: #999;
+    font-style: italic;
+}
+
+.leaflet-geonames-icon {
+    background: transparent no-repeat center center;
+    /*src: https://material.io/icons/#ic_search*/
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE1LjUgMTRoLS43OWwtLjI4LS4yN0MxNS40MSAxMi41OSAxNiAxMS4xMSAxNiA5LjUgMTYgNS45MSAxMy4wOSAzIDkuNSAzUzMgNS45MSAzIDkuNSA1LjkxIDE2IDkuNSAxNmMxLjYxIDAgMy4wOS0uNTkgNC4yMy0xLjU3bC4yNy4yOHYuNzlsNSA0Ljk5TDIwLjQ5IDE5bC00Ljk5LTV6bS02IDBDNy4wMSAxNCA1IDExLjk5IDUgOS41UzcuMDEgNSA5LjUgNSAxNCA3LjAxIDE0IDkuNSAxMS45OSAxNCA5LjUgMTR6Ii8+ICAgIDxwYXRoIGQ9Ik0wIDBoMjR2MjRIMHoiIGZpbGw9Im5vbmUiLz48L3N2Zz4=);
+}
+
+.leaflet-geonames-icon-working {
+    /*src: https://design.google.com/icons/#ic_autorenew*/
+    background-image: url(data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTEyIDZ2M2w0LTQtNC00djNjLTQuNDIgMC04IDMuNTgtOCA4IDAgMS41Ny40NiAzLjAzIDEuMjQgNC4yNkw2LjcgMTQuOGMtLjQ1LS44My0uNy0xLjc5LS43LTIuOCAwLTMuMzEgMi42OS02IDYtNnptNi43NiAxLjc0TDE3LjMgOS4yYy40NC44NC43IDEuNzkuNyAyLjggMCAzLjMxLTIuNjkgNi02IDZ2LTNsLTQgNCA0IDR2LTNjNC40MiAwIDgtMy41OCA4LTggMC0xLjU3LS40Ni0zLjAzLTEuMjQtNC4yNnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==);
+    animation: spin 2s infinite linear;
+}
+
+@-webkit-keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
+
+@keyframes spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg)
+    }
+}
