@@ -1,9 +1,45 @@
-<h1>OSM Then And Now</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>OSM Then and Now</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="OpenStreetMap, then and now side by side" />
+  <script src='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.js'></script>
+  <script src="leaflet-side-by-side.js"></script>
+  <script src="leaflet-hash.js"></script>
+  <link href='http://cdn.leafletjs.com/leaflet/v1.3.1/leaflet.css' rel='stylesheet' />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div id="lilbox">
+        <div id="title" onclick=collapse()>OSM Then and Now</div>
+        <div id="collapsible">
+            <div id="sub">Explore OSM how it was in 2008 (left) and compare with how it is now (right). Use the slider to reveal more the one or the other. This is what a community of mappers can accomplish. If you enjoy using OpenStreetMap data, please consider a <a href="https://wiki.osmfoundation.org/wiki/Donate" target="_blank">donation to the OpenStreetMap Foundation</a>.</div>
+            <div id="schmall">A thing by Martijn van Exel, source and instructions how to roll your own <a href="https://github.com/mvexel/openstreetmap-vintage-tile-server" target="_blank">on Github</a></div>
+        </div>
+    </div>
+    <div id='map'></div>
+    <div id='vintage-year-box'>2008</div>
+    <div id='current-year-box'>now</div>
+    <script>
+    var map = L.map('map').setView([51.505, -0.09], 13);
 
-This was OSM Then and Now, which would show you how OSM looked in 2007 and now, side by side.
+    var osmLayer = L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
+    }).addTo(map);
 
-The service is now decommissioned.
+    var vintageLayer = L.tileLayer('http://tile.rtijn.org/tile/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
+    }).addTo(map)
 
-If you're interested in recreating it, I have the Carto style sheet, renderd config, and a osm2pgsql database dump. Contact me if you're interested.
+    L.control.sideBySide(vintageLayer, osmLayer).addTo(map);
+    var hash = new L.Hash(map);    
 
-Onward, Martijn
+    function collapse() {
+        var e = document.getElementById("collapsible");
+        e.style.display = e.style.display == "block" ? "none" : "block";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#lilbox {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 10000;
+    background-color: #fffb;
+    color: black;
+    padding: 10px 10px;
+    width: 300px;
+}
+
+#title {
+    font-size: 1.6em;
+    /* font-weight: bold; */
+    text-align: center;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+#title:hover {
+    cursor: pointer;
+}
+
+#collapsible {
+    padding-top: 10px;
+    position: relative;
+    display: none;
+}
+
+#sub {
+   font-size: 0.8em;
+   text-align: center; 
+}
+
+#schmall {
+    margin-top: 6px;
+   font-size: 0.7em;
+   text-align: center; 
+}
+
+#vintage-year-box {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 10000;
+    background-color: #fffb;
+    color: black;
+    padding: 10px 10px;
+    font-size: 1.6em;
+}
+
+#current-year-box {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    z-index: 10000;
+    background-color: #fffb;
+    color: black;
+    padding: 10px 10px;
+    font-size: 1.6em;
+}
