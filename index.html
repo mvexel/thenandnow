@@ -3,59 +3,9 @@
 <head>
   <title>OSM Then and Now</title>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="OpenStreetMap, then and now side by side" />
-  <script src="leaflet.js"></script>
-  <script src="leaflet-side-by-side.js"></script>
-  <script src="leaflet-hash.js"></script>
-  <script src="L.Control.Geonames.js"></script>
-  <link rel="stylesheet" href="leaflet.css" />
-  <link rel="stylesheet" href="L.Control.Geonames.css" />
-  <link rel="stylesheet" href="style.css" />
+  <p>OSM then and now is no longer hosted here. If you're interested in hosting it, please see https://github.com/mvexel/thenandnow and let me know, so I can add a link or redirect from this place.</p>
+  <p>Goodbye.</p>
 </head>
 <body>
-    <div id="lilbox">
-        <div id="title" onclick=collapse()>OSM Then and Now</div>
-        <div id="collapsible">
-            <div id="sub">Explore OSM how it was in 2008 (left) and compare with how it is now (right). Use the slider to reveal more the one or the other. This is what a community of mappers can accomplish. If you enjoy using OpenStreetMap data, please consider a <a href="https://wiki.osmfoundation.org/wiki/Donate" target="_blank">donation to the OpenStreetMap Foundation</a>.</div>
-            <div id="schmall">A thing by Martijn van Exel, source and instructions how to roll your own <a href="https://github.com/mvexel/openstreetmap-vintage-tile-server" target="_blank">on Github</a>. <strong>This site is currently broken on Safari, see <a href="https://github.com/mvexel/thenandnow/issues/10" target="_blank">this ticket</a>.</strong></div>
-        </div>
-    </div>
-    <div id='map'></div>
-    <div id='vintage-year-box'>2008</div>
-    <div id='current-year-box'>now</div>
-    <script>
-    var map = L.map('map').setView([1.3227, 103.8498], 13);
-
-    var osmLayer = L.tileLayer('https://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
-    }).addTo(map);
-
-    var vintageLayer = L.tileLayer('https://tile.rtijn.org/tile/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap<\/a> contributors'
-    }).addTo(map)
-
-    // Enable side by side control
-    L.control.sideBySide(vintageLayer, osmLayer).addTo(map);
-    
-    // Enable URL hash for permalinks
-    var hash = new L.Hash(map);    
-
-    // Configure and add geocoder control
-    var control = L.control.geonames({
-        username: 'mvexel', // Geonames account username.  Must be provided.
-        zoomLevel: 13, // Max zoom level to zoom to for location. If null, will use the map's max zoom level.
-        showMarker: false, // Show a marker at the location the selected location.
-        showPopup: false, // Show a tooltip at the selected location.
-    });
-    map.addControl(control);
-
-    function collapse() {
-        var e = document.getElementById("collapsible");
-        e.style.display = e.style.display == "block" ? "none" : "block";
-    }
-</script>
-<!-- analytics script -->
-<script defer data-domain="mvexel.github.io/thenandnow" src="https://analytics.rtijn.org/js/plausible.js"></script>
 </body>
 </html>
