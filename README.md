@@ -4,7 +4,7 @@ View OpenStreetMap as it was in January 2008, and compare it to what it looks no
 
 THIS WILL BLOW YOUR MIND.
 
-Watch it in action: http://mvexel.github.io/thenandnow/
+~~Watch it in action: http://mvexel.github.io/thenandnow/~~
 
 Historic tiles are served from an old home server. Be gentle.
 
